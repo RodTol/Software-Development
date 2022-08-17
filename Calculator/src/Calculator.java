@@ -15,13 +15,8 @@ public class Calculator {
     }
 
     public static void main(String[] args) {
-        /*Default type for addend is double, if they became
-        * int I cast into it*/
-        double mem1_d = 0.0;
-        double mem2_d = 0.0;
 
-        int mem1_int = 0;
-        int mem2_int = 0;
+        double result = Double.parseDouble(args[0]);
 
         /*First of all I look at how java reads the input*/
         for (int i = 0; i < args.length; i++)
@@ -37,25 +32,26 @@ public class Calculator {
                 continue;
             }
 
-            if (args[i-1].contains(".")) {
-                mem1_d = Double.parseDouble(args[i-1]);
-            } else {
-                mem1_int = Integer.parseInt(args[i-1]);
-            }
-
-            if (args[i+1].contains(".")) {
-                mem2_d = Double.parseDouble(args[i+1]);
-            } else {
-                mem2_int = Integer.parseInt(args[i+1]);
-            }
+            /*Default type for addend is double, if they became
+             * int I cast into it*/
+            double mem_2 = Double.parseDouble(args[i+1]);
 
             switch (symbol) {
-                case 1 : System.out.println(;
-                case 2 : System.out.println("Symbol not recognised: " + input);
-                case 3 : System.out.println("Symbol not recognised: " + input);
-                case 4 : System.out.println("Symbol not recognised: " + input);
+                case 1 : result = result + mem_2;
+                    System.out.println("Result: " + result);
+                    break;
+                case 2 : result = result - mem_2;
+                    System.out.println("Result: " + result);
+                    break;
+                case 3 : result = result / mem_2;
+                    System.out.println("Result: " + result);
+                    break;
+                case 4 : result = result * mem_2;
+                    System.out.println("Result: " + result);
+                    break;
                 default:
                     System.out.println("Operation failed");
+                    break;
             }
 
         }
