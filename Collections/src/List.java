@@ -1,7 +1,17 @@
 public interface List extends Collection {
     void add(String string);
-    String get();
     void insertAt(int index, String string);
     void remove(int index);
-    int indexOf(String string);
+    default String get(int index) {
+        return getValues()[index];
+    }
+    default int indexOf(String value) {
+        for (int i=0; i < getValues().length ; i++) {
+            if (getValues()[i] == value) {
+                return i;
+            }
+        }
+        System.out.println("Not Found");
+        return getValues().length;
+    }
 }

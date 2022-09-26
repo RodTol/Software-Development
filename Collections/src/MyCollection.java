@@ -5,6 +5,8 @@
 * */
 
 public class MyCollection implements Collection {
-    final static int MAX_LENGTH = 10;
-
+    @Override
+    public String[] getValues() {
+        return new String[0];
+    }
 }
