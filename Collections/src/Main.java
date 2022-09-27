@@ -19,5 +19,25 @@ public class Main {
 
         list.print();
 
+        System.out.println("-----------Stack time-----------");
+
+        MyStack stack = new MyStack(new String[]{"Rodolfo"});
+
+        stack.print();
+
+        System.out.println("I insert Gio, Erica");
+
+        stack.push("Gio");
+        stack.push("Erica");
+
+        stack.print();
+
+        System.out.println("Top:  " + stack.top());
+        System.out.println("I perform one pop");
+
+        stack.pop();
+
+        stack.print();
+
     }
 }

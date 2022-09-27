@@ -7,7 +7,7 @@ public interface List extends Collection {
     }
     default int indexOf(String value) {
         for (int i=0; i < getValues().length ; i++) {
-            if (getValues()[i] == value) {
+            if (getValues()[i].equals(value)) {
                 return i;
             }
         }

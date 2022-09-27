@@ -1,4 +1,3 @@
-import java.lang.reflect.Array;
 import java.util.Arrays;
 
 public class MyList implements List {
@@ -6,7 +5,7 @@ public class MyList implements List {
     /*Remember that string are immutable, so if we want
     * to modify my data string, we will need to create a new one
     * and copy it inside the data variable*/
-    private String[] data = new String[0];
+    private String[] data;
 
     MyList (String[] input) {
         this.data = input;

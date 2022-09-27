@@ -1,17 +1,13 @@
 public interface Collection {
     default boolean is_empty() {
-        if (getValues().length == 0) {
-            return true;
-        } else {
-            return false;
-        }
+        return getValues().length == 0;
     }
     default int get_size() {
         return getValues().length;
     }
     default boolean contains(String value) {
         for (String i : getValues()) {
-            if (i == value) {
+            if (i.equals(value)) {
                 return true;
             }
         }
